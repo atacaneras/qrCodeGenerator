@@ -49,7 +49,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-- [QR Code Library](https://example.com) - The library used for generating QR codes.
+- [QR Code Library]([https://example.com](https://davidshimjs.github.io/qrcodejs/)) - The library used for generating QR codes.
 
 Feel free to customize the content according to your specific project details, such as adding acknowledgements or additional sections based on your project requirements.
 
