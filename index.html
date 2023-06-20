@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code Generator</title>
+  <!-- Include CSS stylesheets and JavaScript files -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+
+  <script src="script.js"></script>
+</head>
+<body>
+  <h1>QR Code Generator</h1>
+  
+  <!-- Input field and Generate button -->
+  <input type="text" id="inputData" placeholder="Enter data">
+  <button onclick="generateQRCode()">Generate</button>
+  
+  <!-- Generated QR code image -->
+<div class="qrcode-wrapper">
+    <div id="qrcode"></div>
+  </div>
+  
+  <!-- Download button -->
+  <button id="downloadButton" onclick="downloadQRCode()" style="display: none; margin: 0 auto;">Download</button>
+  
+  <!-- Include QR code library -->
+  <script src="qrcode.min.js"></script>
+</body>
+</html>
