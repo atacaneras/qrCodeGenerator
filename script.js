@@ -25,10 +25,10 @@ function generateQRCode() {
     var downloadLink = document.createElement('a');
     downloadLink.href = qrcodeDataURL;
     downloadLink.download = 'qrcode.png'; // Set the file name with the .png extension
+    downloadLink.type = 'image/png'; // Set the Content-Type header to image/png
   
     // Append the anchor element to the document and trigger a click event
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
   }
-  
