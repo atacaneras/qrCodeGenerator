@@ -21,14 +21,18 @@ function generateQRCode() {
     var qrcodeElement = document.getElementById('qrcode');
     var qrcodeDataURL = qrcodeElement.querySelector('img').src;
   
-    // Create a temporary anchor element for downloading
-    var downloadLink = document.createElement('a');
-    downloadLink.href = qrcodeDataURL;
-    downloadLink.download = 'qrcode.png'; // Set the file name with the .png extension
-    downloadLink.type = 'image/png'; // Set the Content-Type header to image/png
+    fetch(qrcodeDataURL)
+      .then(response => response.blob())
+      .then(blob => {
+        // Create a temporary anchor element for downloading
+        var downloadLink = document.createElement('a');
+        downloadLink.href = URL.createObjectURL(blob);
+        downloadLink.download = 'qrcode.png'; // Set the file name with the .png extension
   
-    // Append the anchor element to the document and trigger a click event
-    document.body.appendChild(downloadLink);
-    downloadLink.click();
-    document.body.removeChild(downloadLink);
+        // Append the anchor element to the document and trigger a click event
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      });
   }
+  
